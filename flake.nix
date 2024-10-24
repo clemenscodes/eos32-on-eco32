@@ -25,9 +25,19 @@
       ${system} = {
         default = pkgs.stdenvNoCC.mkDerivation {
           name = "eos32-on-eco32-shell";
+          nativeBuildInputs = with pkgs; [
+            pkg-config
+          ];
           buildInputs = with pkgs; [
+            gnumake
             gcc14
+            bison
+            flex
+            ncurses
             libuuid
+            verilog
+            xorg.libX11
+            xterm
           ];
         };
       };
